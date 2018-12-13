@@ -1,0 +1,51 @@
+GIT is a very popular version control tool in software community. Many fortune 500 organizations use GIT. This book contains basic to expert level GIT interview questions that an interviewer asks. Each question is accompanied with an answer so that you can prepare for job interview in short time.
+
+We have compiled this list of GIT questions after attending dozens of technical interviews in top-notch companies like- Google, Facebook, Ebay, Amazon etc.
+
+Some of the sample questions are:
+How can we know if a branch is already merged into master in GIT?
+What is the purpose of git stash drop?
+What is the HEAD in GIT?
+What is the most popular branching strategy in GIT?
+What is SubGit?
+What is the use of git instaweb?
+What are git hooks?
+What is GIT?
+What is a repository in GIT?
+What are the main benefits of GIT?
+What are the disadvantages of GIT?
+What are the main differences between GIT and SVN?
+How will you start GIT for your project?
+What is git clone in GIT?
+How will you create a repository in GIT?
+What are the different ways to start work in GIT?
+GIT is written in which language?
+
+    Git uses ‘C’ language.
+
+What does ‘git pull’ command in GIT do internally?
+
+    Git pull command pulls new changes or commits from a particular branch from your central repository and updates your target branch in your local repository
+
+What does ‘git push’ command in GIT do internally?
+What is git stash?
+
+   According to me you should first explain the need for Git stash.
+
+  Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for sometime to work on something else. The problem is, you don’t want to do a commit of half-  done work just so you can get back to this point later. The answer to this issue is Git stash.
+
+  Now explain what is Git stash. 
+
+  Stashing takes your working directory that is, your modified tracked files and staged changes and saves it on a stack of unfinished changes that you can reapply at any time.
+
+What is the meaning of ‘stage’ in GIT?
+What is the purpose of git config command?
+How can we see the configuration settings of GIT installation?
+How will you write a message with commit command in GIT?
+What is stored inside a commit object in GIT?
+How many heads can you create in a GIT repository?
+Why do we create branches in GIT?
+What are the different kinds of branches that can be created in GIT?
+How will you create a new branch in GIT?
+How will you add a new feature to the main branch?
+What is a pull request in GIT?
