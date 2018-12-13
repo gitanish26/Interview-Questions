@@ -1,0 +1,190 @@
+1) What is Docker?
+
+   > Docker is a containerization software & It allows you bundle code with it’s config and dependencies, making it easy and seamless to deploy your apps on any machine (or several machines).
+
+2) What is the difference between Docker image and Docker container?
+
+   > Docker Image is the source of the docker container. In other words, docker images are used to create containers. It is possible create multiple isolated containers from a single image.
+
+   >  An instance of an image is called container
+
+
+3) How will you remove an image from Docker?
+
+     docker rmi $(docker images -q -f dangling=true)
+     docker rmi d65c4d6a3580
+     docker rm -f 0fd99ee0cb61
+
+4) How is a Docker container different from a hypervisor?
+
+      > Hypervisors virtualize on a hardware level while containers achieve this on an operating system level- by sharing the base operating system’s kernel. 
+
+      > They are lighter and smaller compared to hypervisors,Docker provides lightweight virtualization with almost zero overhead
+
+      > Docker isolating application environments, containers achieve better resource utilization than hypervisor
+
+     >  Containers can be started and stopped within milliseconds.
+ 
+     >  Many containers can be run on a single machine than with virtualization alone.
+
+    >   Benefits of using docker is security.
+   
+5) Can we write compose file in json file instead of yaml?
+
+      >  Yes. Yaml format is a superset of json format. Therefore any json file is also a valid Yaml file.
+
+     >  If we use a json file then we have to specify in docker command that we are using a json file as follows:
+
+     > % docker-compose -f docker-compose.json up
+
+  
+6) Can we run multiple apps on one server with Docker?
+
+7) What are the common use cases of Docker?
+ 
+        https://medium.com/@nagarwal/docker-usecases-3b62f4d68bc4
+   
+8) What are the main features of Docker-compose?
+
+   Docker Compose makes it easy to run multi-container Docker applications. You can configure all your containers in one file and run them at once with a single command
+
+   Docker Compose allows you to define and run multiple-container Docker environments. You’re able to configure your application services in a Compose file, and then start and stop all services from this    configuration file.
+
+  Docker Compose caches your configuration; when you restart a service that hasn’t been updated, Compose will reuse the existing containers. Reusing containers decreases build and load time
+
+  
+
+What is the most popular use of Docker?
+
+    
+   
+  
+What is the role of open source development in the popularity of Docker?
+What is the difference between Docker commands: up, run and start?
+What is Docker Swarm?
+What are the features of Docker Swarm?
+What is a Docker Image?
+
+   A Docker image is a pre-built Dockerfile. It’s ready to run, and can be run on any host that has Docker installed.
+     
+What is a Docker Container?
+
+     A container is a runtime instance of an image.
+
+     A docker container is basically a process or a set of processes running in isolation with a predefined provisioned file system. Think about it this way, a container is a collection of processes that have access to the      files in the image
+    
+What is Docker Machine?
+
+    Docker Machine is a tool for provisioning and managing your Dockerized hosts
+
+    Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands
+
+   
+Why do we use Docker Machine?
+
+       Docker enables you to rapidly deploy server environments in “containers.” You might question why use Docker rather than VMware or Oracle’s VirtualBox?
+
+      While Docker utilizes the virtualization technology in the Linux kernel, it does not create virtual machines (in fact, if you run Docker on MacOS or Windows, you’ll have to run it on a virtual machine).
+       
+How will you create a Container in Docker?
+
+   Containers are created from images with the docker run command and can be listed with the docker ps command.
+
+   To create a container, Docker engine takes an image, adds the top writable layer and initializes various settings (network ports, container name, ID and resource limits).
+
+   All write operation inside the container are stored in this writable layer, so when the container is deleted, the writable layer is also deleted while the underlying image remains unchanged.
+
+
+Do you think Docker is Application-centric or Machine-centric?
+Can we lose our data when a Docker Container exits?
+Can we run more than one process in a Docker container?
+What are the objects created by Docker Cloud  in Amazon Web Services (AWS) EC2?
+How will you take backup of Docker container volumes in AWS S3?
+What are the three main steps of Docker Compose?
+What is Pluggable Storage Driver architecture in Docker based containers?
+What is Docker Hub?
+
+     Docker Hub is an public  image repository for Docker images.
+
+     
+What are the main features of Docker Hub?
+
+  Docker Hub provides a place for you and your team to build and ship Docker images.
+
+  Repositories, which allow you to push images from a local Docker daemon to Docker Hub, and
+
+  Automated Builds, which link to a source code repository and trigger an image rebuild process on Docker Hub when changes are detected in the source code.
+
+  You can create public repositories which can be accessed by any other Hub user, or you can create private repositories with limited access you control.
+ 
+What are the main security concerns with Docker based containers?
+What are the security benefits of using Container based system?
+
+     From a security point of view, Docker ensures that applications that are running on containers are completely segregated and isolated from each other, granting you complete control over traffic flow and management. No Docker container can look into processes running inside another container. From an architectural point of view, each container gets its own set of resources ranging from processing to network stacks.
+
+How can we check the status of a Container in Docker?
+What are the main benefits of using Docker?
+  
+   Ship your applications to anybody or a remote server with ease.
+
+   Docker isolating application environments, containers achieve better resource utilization than hypervisor
+
+   Containers can be started and stopped within milliseconds.
+
+   https://www.linode.com/docs/applications/containers/when-and-why-to-use-docker/#what-is-docker
+
+How does Docker simplify Software Development process?
+What is the basic architecture behind Docker?
+What are the popular tasks that you can do with Docker Command line tool?
+What type of applications- Stateless or Stateful are more suitable for Docker Container?
+How can Docker run on different Linux distributions?
+Why do we use Docker on top of a virtual machine?
+How can Docker container share resources?
+What is the difference between Add and Copy command in a Dockerfile?
+
+    
+What is Docker Entrypoint?
+
+   The ENTRYPOINT specifies a command that will always be executed when the container starts.
+
+   The CMD specifies arguments that will be fed to the ENTRYPOINT.
+
+What is ONBUILD command in Docker?
+What is Build cache in Docker?
+What are the most common instructions in Dockerfile?
+
+        A Dockerfile is a file that contains a set of instructions that describe an environment configuration. For example, if we wanted an environment that ran Ubuntu 14.04, had vim installed, and had port 80 open, the      Dockerfile would look something like the following:
+
+  FROM ubuntu:14.04
+
+  RUN apt-get install -y vim
+
+  EXPOSE 80
+
+
+What is the purpose of EXPOSE command in Dockerfile?
+
+   When writing your Dockerfiles, the instruction EXPOSE tells Docker the running container listens on specific network ports.
+  
+   The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
+
+   docker run --expose=1234 my_app
+
+What are the different kinds of namespaces available in a Container?
+How will you monitor Docker in production?
+
+    Docker provides tools like docker stats and docker events to monitor Docker in production.
+   We can get reports on important statistics with these commands.
+   Docker stats: When we call docker stats with a container id, we get the CPU, memory usage etc of a container. It is similar to top command in Linux.
+   Docker events: Docker events are a command to see the stream of activities that are going on in Docker daemon.
+   Some of the common Docker events are: attach, commit, die, detach, rename, destroy etc.
+  We can also use various options to limit or filter the events that we are interested in
+
+What are the Cloud platforms that support Docker?
+How can we control the startup order of services in Docker compose?
+Why Docker compose does not wait for a container to be ready before moving on to start next service in dependency order?
+How will you customize Docker compose file for different environments?
+
+How docker different from virtual machines?
+
+     Virtualization is achieved by running a hypervisor on the host which emulates another bare-metal computer; thus enabling another operating system to run on top of it. This offers us similar benefits with isolation and superior flexibility, but at the cost of relatively high resource utilization. Docker prevents us from installing an entire operating system (you’re limited by the kernel on the host), but keeps resource usage to a minimum.
